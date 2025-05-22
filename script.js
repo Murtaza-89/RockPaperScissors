@@ -2,8 +2,8 @@ alert("Welcome to Rock paper scissors. You will play three rounds against a robo
 let bestOfThreeWins = []
 let bestOfThreeLoses = []
 for (i=1; i<4; i++) {
-    let userInput = prompt(`Round ${i}: select Rock, paper or scissors`)
-    let validInputs = ["Rock","rock","paper","Paper","Scissors","scissors"]
+    let userInput = prompt(`Round ${i}: select Rock, paper or scissors`).toLowerCase()
+    let validInputs = ["rock","paper","scissors"]
     if (!validInputs.includes(userInput)) {
     alert("Invalid input please choose Rock, paper or scissors")}
     let computerChoice 
@@ -21,16 +21,16 @@ for (i=1; i<4; i++) {
         computerChoice = "Scissors"
     }
     alert("Computer chose: " + computerChoice)
-    if ((userInput == "Rock" || userInput == "rock") && (computerChoice == "Scissors")) {
+    if ((userInput == "rock") && (computerChoice == "Scissors")) {
         bestOfThreeWins.push("win")
         alert("You win!")}
-    else if ((userInput == "Paper" || userInput == "paper") && (computerChoice == "Rock")) {
+    else if ((userInput == "paper") && (computerChoice == "Rock")) {
         bestOfThreeWins.push("win")
         alert("You win!")}
-    else if ((userInput == "Scissors" || userInput == "scissors") && (computerChoice == "Paper")) {
+    else if ((userInput == "scissors") && (computerChoice == "Paper")) {
         bestOfThreeWins.push("win")
         alert("You win!")}
-    else if (userInput == computerChoice || userInput == computerChoice.toLowerCase()) {
+    else if (userInput == computerChoice.toLowerCase()) {
         alert("It's a tie!")}
     else {
         bestOfThreeLoses.push("Lose")
